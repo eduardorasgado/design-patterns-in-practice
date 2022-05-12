@@ -1,19 +1,20 @@
 package creational.Prototype.UIExample;
 
-public class Button implements Interactable {
+public class Button implements Clickable {
 	int x, y;
 	private Style style;
-	
+
 	public Button(int x, int y) {
 		this.x = x;
 		this.y = y;
 		style = new Style();
 	}
+
 	public Button(Button button) {
 		setCoordinates(button.x, button.y);
 		style = new Style(button.getStyle());
 	}
-	
+
 	public int getX() {
 		return x;
 	}
@@ -34,17 +35,24 @@ public class Button implements Interactable {
 	public void setStyle(Style style) {
 		this.style = style;
 	}
-	
+
 	@Override
 	public Interactable clone() {
 		return new Button(this);
 	}
+
 	@Override
 	public void startInteraction() {
 		System.out.println(style.getColor() + " button clicked");
 	}
+
 	@Override
 	public void finishInteraction() {
 		System.out.println(style.getColor() + " button unclicked");
+	}
+
+	@Override
+	public void interact(ClickableInteractionType type) {
+		System.out.println(style.getColor() + " button is been " + type.getDescription());
 	}
 }
