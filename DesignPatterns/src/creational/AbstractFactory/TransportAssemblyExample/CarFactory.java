@@ -1,6 +1,5 @@
 package creational.AbstractFactory.TransportAssemblyExample;
 
-import creational.FactoryMethod.LogisticsExample.Transport;
 
 public class CarFactory extends TransportFactory {
 

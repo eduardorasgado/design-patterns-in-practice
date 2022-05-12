@@ -2,7 +2,6 @@ package creational.AbstractFactory.TransportAssemblyExample;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Supplier;
 
 public abstract class TransportFactory {
 	
