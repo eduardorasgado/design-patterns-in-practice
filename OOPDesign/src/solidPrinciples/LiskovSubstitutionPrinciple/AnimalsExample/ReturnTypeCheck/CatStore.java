@@ -2,6 +2,7 @@ package solidPrinciples.LiskovSubstitutionPrinciple.AnimalsExample.ReturnTypeChe
 
 import java.util.ArrayList;
 
+import solidPrinciples.LiskovSubstitutionPrinciple.AnimalsExample.Model.Animal;
 import solidPrinciples.LiskovSubstitutionPrinciple.AnimalsExample.Model.AnimalClassification;
 import solidPrinciples.LiskovSubstitutionPrinciple.AnimalsExample.Model.BengalCat;
 import solidPrinciples.LiskovSubstitutionPrinciple.AnimalsExample.Model.Cat;

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import solidPrinciples.LiskovSubstitutionPrinciple.AnimalsExample.Model.*;
 
 public class AnimalStore {
+	
 	public Animal buy() {
 		System.out.println("Buying an animal...");
 		// not even closed the best implementation but a bengal cat is an animal so...

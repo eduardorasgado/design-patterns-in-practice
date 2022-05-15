@@ -9,6 +9,8 @@ public class AnimalStoreDemo {
 	
 	// liskov substitution principle: return type check 
 	public static void main(String[] args) {
+		// this could be better if store.buy from animal store returns a animal, however it cant be possible
+		// due this method is returning a bengal cat and animal class is abstract
 		AnimalStore store = new AnimalStore();
 		Animal animal = store.buy();
 		System.out.println(animal.getAnimalName());

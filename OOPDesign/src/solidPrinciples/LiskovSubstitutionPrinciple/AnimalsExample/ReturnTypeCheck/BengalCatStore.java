@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import solidPrinciples.LiskovSubstitutionPrinciple.AnimalsExample.Model.AnimalClassification;
 import solidPrinciples.LiskovSubstitutionPrinciple.AnimalsExample.Model.BengalCat;
-import solidPrinciples.LiskovSubstitutionPrinciple.AnimalsExample.Model.Cat;
 import solidPrinciples.LiskovSubstitutionPrinciple.AnimalsExample.Model.FeedType;
 import solidPrinciples.LiskovSubstitutionPrinciple.AnimalsExample.Model.GenderType;
 
