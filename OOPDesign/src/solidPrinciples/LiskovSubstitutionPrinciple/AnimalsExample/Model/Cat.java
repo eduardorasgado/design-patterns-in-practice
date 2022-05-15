@@ -17,17 +17,17 @@ public class Cat extends LeggedAnimal {
 	}
 
 	@Override
-	protected void eat(String feed, FeedType feedType) {
-		System.out.println("General way a cat diggest feeding with " + feed);
+	public void eat(String feed, FeedType feedType) {
+		System.out.println("General way a cat diggest: " + feed);
 	}
 
 	@Override
-	protected void reproduce(Animal animal, GenderType genderType) {
+	public void reproduce(Animal animal, GenderType genderType) {
 		System.out.println("General way a cat reproduce with " + animal);
 	}
 	
 	@Override
-	protected void move() {
+	public void move() {
 		System.out.println("Bengal cat is moving...");
 	}
 }
