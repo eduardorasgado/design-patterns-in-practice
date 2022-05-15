@@ -1,6 +1,6 @@
 package doubleDispatch.TableDrivenMethod.SpaceExample.Model;
 
-public class Planet extends SpaceObject{
+public class Planet extends SpaceObject {
 	private String name;
 
 	public Planet(String material, int speed, int mass, String name) {

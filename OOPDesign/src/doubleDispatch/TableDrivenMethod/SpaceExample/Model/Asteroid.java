@@ -1,6 +1,6 @@
 package doubleDispatch.TableDrivenMethod.SpaceExample.Model;
 
-public class Asteroid extends SpaceObject implements ISpaceObject {
+public class Asteroid extends SpaceObject {
 	private int diameter;
 	private double gravity;
 
