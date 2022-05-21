@@ -15,7 +15,7 @@ public class PokedexMapService {
 	}
 
 	public void insertOrUpdate(Map<String, AbstractMap<String, Integer>> pokemonMap) {
-		for(Entry<String, AbstractMap<String, Integer>> pokemon : pokemonMap.entrySet()) {
+		for (Entry<String, AbstractMap<String, Integer>> pokemon : pokemonMap.entrySet()) {
 			insertOrUpdate(pokemon.getKey(), pokemon.getValue().entrySet().stream().collect(Collectors.toList()));
 		}
 	}

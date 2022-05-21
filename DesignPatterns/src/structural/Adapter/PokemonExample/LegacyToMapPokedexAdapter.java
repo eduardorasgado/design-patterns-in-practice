@@ -29,7 +29,7 @@ public class LegacyToMapPokedexAdapter implements IPokemonCatcherService<List<Li
 				.filter(p -> p.get(0) == id).findFirst();
 
 		if (pokemon.isPresent()) {
-			
+
 			Map<String, AbstractMap<String, Integer>> pokemonMap = new HashMap<String, AbstractMap<String, Integer>>();
 
 			listToMapPokemonDataMapper.mapPokemonData(pokemon.get(), pokemonMap);
@@ -42,16 +42,16 @@ public class LegacyToMapPokedexAdapter implements IPokemonCatcherService<List<Li
 	public List<List<String>> getAllCatched() {
 		List<List<String>> destinyCollection = new ArrayList<>();
 		Map<String, AbstractMap<String, Integer>> pokemons = newPokedexService.getPokemons();
-		
-		for(Entry<String, AbstractMap<String, Integer>> pokemonEntry : pokemons.entrySet()) {
+
+		for (Entry<String, AbstractMap<String, Integer>> pokemonEntry : pokemons.entrySet()) {
 			List<String> pokemonData = new ArrayList<>();
 			Map<String, AbstractMap<String, Integer>> pokemonMap = new HashMap<>();
 			pokemonMap.put(pokemonEntry.getKey(), pokemonEntry.getValue());
-			
+
 			mapToListPokemonDataMapper.mapPokemonData(pokemonMap, pokemonData);
 			destinyCollection.add(pokemonData);
 		}
-		
+
 		return destinyCollection;
 	}
 }
