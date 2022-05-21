@@ -1,4 +1,4 @@
-package structural.Adapter.PokemonExample;
+package structural.Adapter.PokemonExample.Service;
 
 public interface IPokemonCatcherService<T> {
 	void insertOrUpdate(String id);

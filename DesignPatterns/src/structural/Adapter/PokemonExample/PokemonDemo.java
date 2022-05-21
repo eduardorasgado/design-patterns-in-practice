@@ -6,6 +6,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import structural.Adapter.PokemonExample.Mapper.DictToListPokemonDataMapper;
+import structural.Adapter.PokemonExample.Mapper.IPokemonDataMapper;
+import structural.Adapter.PokemonExample.Mapper.ListToDictPokemonDataMapper;
+import structural.Adapter.PokemonExample.Service.IPokemonCatcherService;
+import structural.Adapter.PokemonExample.Service.LegacyPokemonCatcherService;
+import structural.Adapter.PokemonExample.Service.PokedexMapService;
+
 public class PokemonDemo {
 
 	public static void main(String[] args) {

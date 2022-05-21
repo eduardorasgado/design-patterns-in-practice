@@ -6,6 +6,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+
+import structural.Adapter.PokemonExample.LegacyAccessor.LegacyPokemonExtractor;
+import structural.Adapter.PokemonExample.Mapper.IPokemonDataMapper;
+import structural.Adapter.PokemonExample.Service.IPokemonCatcherService;
+import structural.Adapter.PokemonExample.Service.PokedexMapService;
+
 import java.util.Optional;
 
 public class LegacyToMapPokedexAdapter implements IPokemonCatcherService<List<List<String>>> {
@@ -17,7 +23,6 @@ public class LegacyToMapPokedexAdapter implements IPokemonCatcherService<List<Li
 	public LegacyToMapPokedexAdapter(PokedexMapService newPokedexService,
 			IPokemonDataMapper<List<String>, Map<String, AbstractMap<String, Integer>>> listToMapPokemonDataMapper,
 			IPokemonDataMapper<Map<String, AbstractMap<String, Integer>>, List<String>> mapToListPokemonDataMapper) {
-		super();
 		this.newPokedexService = newPokedexService;
 		this.listToMapPokemonDataMapper = listToMapPokemonDataMapper;
 		this.mapToListPokemonDataMapper = mapToListPokemonDataMapper;
@@ -29,7 +34,6 @@ public class LegacyToMapPokedexAdapter implements IPokemonCatcherService<List<Li
 				.filter(p -> p.get(0) == id).findFirst();
 
 		if (pokemon.isPresent()) {
-
 			Map<String, AbstractMap<String, Integer>> pokemonMap = new HashMap<String, AbstractMap<String, Integer>>();
 
 			listToMapPokemonDataMapper.mapPokemonData(pokemon.get(), pokemonMap);

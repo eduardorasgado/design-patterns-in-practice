@@ -1,7 +1,9 @@
-package structural.Adapter.PokemonExample;
+package structural.Adapter.PokemonExample.Service;
 
 import java.util.List;
 import java.util.Optional;
+
+import structural.Adapter.PokemonExample.LegacyAccessor.LegacyPokemonExtractor;
 
 public class LegacyPokemonCatcherService implements IPokemonCatcherService<List<List<String>>> {
 

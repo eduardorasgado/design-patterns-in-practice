@@ -1,4 +1,4 @@
-package structural.Adapter.PokemonExample;
+package structural.Adapter.PokemonExample.Service;
 
 import java.util.AbstractMap;
 import java.util.List;

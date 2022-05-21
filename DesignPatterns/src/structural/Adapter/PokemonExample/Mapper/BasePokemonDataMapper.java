@@ -1,4 +1,4 @@
-package structural.Adapter.PokemonExample;
+package structural.Adapter.PokemonExample.Mapper;
 
 public class BasePokemonDataMapper {
 	protected boolean isParseableToInteger(String value) {

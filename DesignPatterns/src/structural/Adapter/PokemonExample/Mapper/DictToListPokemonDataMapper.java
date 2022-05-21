@@ -1,9 +1,11 @@
-package structural.Adapter.PokemonExample;
+package structural.Adapter.PokemonExample.Mapper;
 
 import java.util.AbstractMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
+import structural.Adapter.PokemonExample.PokemonStatType;
 
 public class DictToListPokemonDataMapper extends BasePokemonDataMapper
 		implements IPokemonDataMapper<Map<String, AbstractMap<String, Integer>>, List<String>> {

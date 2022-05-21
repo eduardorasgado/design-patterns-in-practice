@@ -1,4 +1,4 @@
-package structural.Adapter.PokemonExample;
+package structural.Adapter.PokemonExample.LegacyAccessor;
 
 import java.util.List;
 
