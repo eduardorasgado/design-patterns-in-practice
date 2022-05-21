@@ -3,16 +3,25 @@ package structural.Adapter.PokemonExample;
 import java.util.List;
 import java.util.Optional;
 
-public class LegacyPokemonCatcherService {
-	// fields are:
-	// id, name, attack, defense, type(integer), level(integer) 
-	private List<List<String>> pokemonList;
-	
-	public LegacyPokemonCatcherService(List<List<String>> pokemonList) {
-		this.pokemonList = pokemonList;
+public class LegacyPokemonCatcherService implements IPokemonCatcherService {
+
+	private List<List<String>> ownedPokemons;
+
+	public LegacyPokemonCatcherService(List<List<String>> ownedPokemons) {
+		this.ownedPokemons = ownedPokemons;
 	}
 
-	public Optional<List<String>> catchPokemon(String id) {
-		return pokemonList.stream().filter(pokemon -> pokemon.get(0) == id).findFirst();
+	@Override
+	public void insertOrUpdate(String id) {
+		Optional<List<String>> pokemon = LegacyPokemonExtractor.getLegacyPokemonList().stream()
+				.filter(p -> p.get(0) == id).findFirst();
+		
+		if (pokemon.isPresent()) {
+			ownedPokemons.add(pokemon.get());
+		}
+	}
+
+	public List<List<String>> getOwnedPokemons() {
+		return ownedPokemons;
 	}
 }

@@ -3,6 +3,7 @@ package structural.Adapter.PokemonExample;
 import java.util.ArrayList;
 import java.util.List;
 
+// External service, we dont have access to its internal implementation.
 public class LegacyExternalPokedexSingleton {
 
 	// id, name, attack, defense, type(integer), level(integer)
@@ -68,7 +69,7 @@ public class LegacyExternalPokedexSingleton {
 		}};
 	}
 	
-	public static LegacyExternalPokedexSingleton getInstance() {
+	public final static LegacyExternalPokedexSingleton getInstance() {
 		if(instance == null) {
 			instance = new LegacyExternalPokedexSingleton();
 		}

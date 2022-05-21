@@ -1,5 +1,6 @@
 package structural.Adapter.PokemonExample;
 
+import java.util.AbstractMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -7,14 +8,14 @@ import java.util.stream.Collectors;
 
 public class PokedexMapService {
 
-	private Map<String, Map<String, Integer>> pokemons;
+	private Map<String, AbstractMap<String, Integer>> pokemons;
 
-	public PokedexMapService(Map<String, Map<String, Integer>> pokemons) {
-		this.pokemons = pokemons;
+	public PokedexMapService(Map<String, AbstractMap<String, Integer>> newPokemonMap) {
+		this.pokemons = newPokemonMap;
 	}
 
-	public void insertOrUpdate(Map<String, Map<String, Integer>> pokemonMap) {
-		for(Entry<String, Map<String, Integer>> pokemon : pokemonMap.entrySet()) {
+	public void insertOrUpdate(Map<String, AbstractMap<String, Integer>> pokemonMap) {
+		for(Entry<String, AbstractMap<String, Integer>> pokemon : pokemonMap.entrySet()) {
 			insertOrUpdate(pokemon.getKey(), pokemon.getValue().entrySet().stream().collect(Collectors.toList()));
 		}
 	}
@@ -37,7 +38,7 @@ public class PokedexMapService {
 			Map<String, Integer> stats = newStats.stream()
 					.collect(Collectors.toMap(entry -> entry.getKey(), entry -> entry.getValue()));
 
-			getPokemons().put(name, stats);
+			getPokemons().put(name, (AbstractMap<String, Integer>) stats);
 		}
 	}
 
@@ -45,7 +46,7 @@ public class PokedexMapService {
 		return pokemons.containsKey(name);
 	}
 
-	public Map<String, Map<String, Integer>> getPokemons() {
+	public Map<String, AbstractMap<String, Integer>> getPokemons() {
 		return pokemons;
 	}
 }
