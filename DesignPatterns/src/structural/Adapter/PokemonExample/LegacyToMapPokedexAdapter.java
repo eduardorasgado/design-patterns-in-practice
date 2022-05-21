@@ -1,23 +1,26 @@
 package structural.Adapter.PokemonExample;
 
 import java.util.AbstractMap;
-import java.util.AbstractMap.SimpleEntry;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Map.Entry;
+import java.util.Optional;
 
-public class LegacyToMapPokedexAdapter implements IPokemonCatcherService {
+public class LegacyToMapPokedexAdapter implements IPokemonCatcherService<List<List<String>>> {
 
 	private PokedexMapService newPokedexService;
-	private IPokemonDataMapper<List<String>, Map<String, AbstractMap<String, Integer>>> pokemonDataMapper;
+	private IPokemonDataMapper<List<String>, Map<String, AbstractMap<String, Integer>>> listToMapPokemonDataMapper;
+	private IPokemonDataMapper<Map<String, AbstractMap<String, Integer>>, List<String>> mapToListPokemonDataMapper;
 
 	public LegacyToMapPokedexAdapter(PokedexMapService newPokedexService,
-			IPokemonDataMapper<List<String>, Map<String, AbstractMap<String, Integer>>> pokemonDataMapper) {
+			IPokemonDataMapper<List<String>, Map<String, AbstractMap<String, Integer>>> listToMapPokemonDataMapper,
+			IPokemonDataMapper<Map<String, AbstractMap<String, Integer>>, List<String>> mapToListPokemonDataMapper) {
+		super();
 		this.newPokedexService = newPokedexService;
-		this.pokemonDataMapper = pokemonDataMapper;
+		this.listToMapPokemonDataMapper = listToMapPokemonDataMapper;
+		this.mapToListPokemonDataMapper = mapToListPokemonDataMapper;
 	}
 
 	@Override
@@ -29,9 +32,26 @@ public class LegacyToMapPokedexAdapter implements IPokemonCatcherService {
 			
 			Map<String, AbstractMap<String, Integer>> pokemonMap = new HashMap<String, AbstractMap<String, Integer>>();
 
-			pokemonDataMapper.mapPokemonData(pokemon.get(), pokemonMap);
+			listToMapPokemonDataMapper.mapPokemonData(pokemon.get(), pokemonMap);
 
 			newPokedexService.insertOrUpdate(pokemonMap);
 		}
+	}
+
+	@Override
+	public List<List<String>> getAllCatched() {
+		List<List<String>> destinyCollection = new ArrayList<>();
+		Map<String, AbstractMap<String, Integer>> pokemons = newPokedexService.getPokemons();
+		
+		for(Entry<String, AbstractMap<String, Integer>> pokemonEntry : pokemons.entrySet()) {
+			List<String> pokemonData = new ArrayList<>();
+			Map<String, AbstractMap<String, Integer>> pokemonMap = new HashMap<>();
+			pokemonMap.put(pokemonEntry.getKey(), pokemonEntry.getValue());
+			
+			mapToListPokemonDataMapper.mapPokemonData(pokemonMap, pokemonData);
+			destinyCollection.add(pokemonData);
+		}
+		
+		return destinyCollection;
 	}
 }

@@ -3,7 +3,7 @@ package structural.Adapter.PokemonExample;
 import java.util.List;
 import java.util.Optional;
 
-public class LegacyPokemonCatcherService implements IPokemonCatcherService {
+public class LegacyPokemonCatcherService implements IPokemonCatcherService<List<List<String>>> {
 
 	private List<List<String>> ownedPokemons;
 
@@ -21,7 +21,8 @@ public class LegacyPokemonCatcherService implements IPokemonCatcherService {
 		}
 	}
 
-	public List<List<String>> getOwnedPokemons() {
+	@Override
+	public List<List<String>> getAllCatched() {
 		return ownedPokemons;
 	}
 }
