@@ -13,6 +13,7 @@ public class PaymentProcess {
 
 		for (Item item : order.getLineItems()) {
 			double subTotal = item.getPrice() * item.getQuantity();
+			// encapsulate what varies: class level
 			total += subTotal * taxCalculator.getTaxRate(order.getCountry(), order.getState(), item.getProduct(), "US");
 		}
 

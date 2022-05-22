@@ -15,6 +15,7 @@ public class PaymentBox {
 		return total;
 	}
 	
+	// encapsulate what varies: method level
 	public double getTaxRate(String country) {
 		if(country == "US") {
 			return 0.07; // US sales tax
