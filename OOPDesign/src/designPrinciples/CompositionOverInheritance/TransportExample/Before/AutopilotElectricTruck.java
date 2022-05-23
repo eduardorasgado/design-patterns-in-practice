@@ -1,5 +1,5 @@
 package designPrinciples.CompositionOverInheritance.TransportExample.Before;
 
-public class AutopilotElectricTruck {
+public class AutopilotElectricTruck extends ElectricTruck {
 	private boolean isOptimalRouteCalculationForCargoActivated;
 }

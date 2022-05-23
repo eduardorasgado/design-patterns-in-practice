@@ -1,5 +1,5 @@
 package designPrinciples.CompositionOverInheritance.TransportExample.Before;
 
-public class AutopilotCombustionEngineCar {
+public class AutopilotCombustionEngineCar extends CombustionEngineCar {
 	private String fuelSavingRouteGenerationAlgorithmActivated;
 }

@@ -1,5 +1,5 @@
 package designPrinciples.CompositionOverInheritance.TransportExample.Before;
 
-public class AutopilotElectricCar {
+public class AutopilotElectricCar extends ElectricCar {
 	private String optimalFastTrackSystem;
 }
