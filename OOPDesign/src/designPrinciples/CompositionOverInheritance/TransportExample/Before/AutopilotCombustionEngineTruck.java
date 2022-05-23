@@ -1,0 +1,5 @@
+package designPrinciples.CompositionOverInheritance.TransportExample.Before;
+
+public class AutopilotCombustionEngineTruck {
+	private String dieselSavingRouteGenerationAlgorithmActivated;
+}
