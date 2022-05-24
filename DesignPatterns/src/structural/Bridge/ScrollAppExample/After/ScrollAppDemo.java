@@ -1,4 +1,4 @@
-package structural.Bridge.ScrollAppExample;
+package structural.Bridge.ScrollAppExample.After;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package structural.Bridge.ScrollAppExample;
+package structural.Bridge.ScrollAppExample.After;
 
 public class VideoViewModel implements IViewModel {
 	private Video video;

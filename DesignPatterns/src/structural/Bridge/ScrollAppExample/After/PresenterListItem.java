@@ -1,4 +1,4 @@
-package structural.Bridge.ScrollAppExample;
+package structural.Bridge.ScrollAppExample.After;
 
 public abstract class PresenterListItem {
 	private IViewModel viewModel;

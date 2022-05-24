@@ -1,4 +1,4 @@
-package structural.Bridge.ScrollAppExample;
+package structural.Bridge.ScrollAppExample.After;
 
 public class WithThumbnailListItem extends PresenterListItem {
 	
