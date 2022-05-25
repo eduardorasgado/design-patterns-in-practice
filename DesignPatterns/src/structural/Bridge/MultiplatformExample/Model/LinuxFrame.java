@@ -1,6 +1,6 @@
 package structural.Bridge.MultiplatformExample.Model;
 
-public class MacFrame extends UIElement implements IFrame{
+public class LinuxFrame extends UIElement implements IFrame{
 
 	@Override
 	public void render() {
@@ -18,5 +18,4 @@ public class MacFrame extends UIElement implements IFrame{
 		// TODO Auto-generated method stub
 		
 	}
-	
 }

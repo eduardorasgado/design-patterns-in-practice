@@ -1,5 +1,6 @@
 package structural.Bridge.MultiplatformExample.Model;
 
-public class IFrame {
-
+public interface IFrame {
+	void addUIElement(UINode node);
+	void addUIElement(UIElement node);
 }
