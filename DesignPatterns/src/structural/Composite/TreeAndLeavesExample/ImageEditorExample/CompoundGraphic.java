@@ -6,23 +6,23 @@ import java.util.List;
 public class CompoundGraphic implements Graphic {
 
 	private List<Graphic> children;
-	
+
 	public CompoundGraphic() {
 		children = new LinkedList<>();
 	}
-	
+
 	public void addChild(Graphic child) {
 		getChildren().add(child);
 	}
-	
+
 	public void getChild(int childIndex) {
 		getChildren().get(childIndex);
 	}
-	
+
 	public void removeChild(int childIndex) {
 		getChildren().remove(childIndex);
 	}
-	
+
 	@Override
 	public void drag(int x, int y) {
 		getChildren().forEach(child -> child.drag(x, y));
