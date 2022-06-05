@@ -1,4 +1,4 @@
-package structural.Composite.TreeAndLeavesExample.ImageEditorExample;
+package structural.Composite.ImageEditorExample;
 
 import java.util.LinkedList;
 import java.util.List;

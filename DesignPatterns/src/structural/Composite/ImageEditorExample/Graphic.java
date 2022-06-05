@@ -1,4 +1,4 @@
-package structural.Composite.TreeAndLeavesExample.ImageEditorExample;
+package structural.Composite.ImageEditorExample;
 
 public interface Graphic {
 	void drag(int x, int y);

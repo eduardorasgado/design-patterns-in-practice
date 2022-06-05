@@ -1,4 +1,4 @@
-package structural.Composite.TreeAndLeavesExample.ImageEditorExample;
+package structural.Composite.ImageEditorExample;
 
 public class Dot implements Graphic {
 	private int x, y;

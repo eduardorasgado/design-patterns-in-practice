@@ -1,4 +1,4 @@
-package structural.Composite.TreeAndLeavesExample.ImageEditorExample;
+package structural.Composite.ImageEditorExample;
 
 public class Circle extends Dot implements Graphic {
 	private int radius;
