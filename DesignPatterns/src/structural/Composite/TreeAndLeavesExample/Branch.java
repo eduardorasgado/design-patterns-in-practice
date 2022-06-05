@@ -13,7 +13,7 @@ public class Branch implements LifeProvider {
 	
 	@Override
 	public void provide(Chemical chemical) {
-		children.forEach(child -> child.provide(chemical));
+		getChildren().forEach(child -> child.provide(chemical));
 	}
 	
 	public void addChild(LifeProvider child) {
