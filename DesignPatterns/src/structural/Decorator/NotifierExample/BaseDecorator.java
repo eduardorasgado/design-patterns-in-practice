@@ -1,6 +1,6 @@
 package structural.Decorator.NotifierExample;
 
-public class BaseDecorator extends Notifier {
+public class BaseDecorator implements Notifier {
 	private Notifier wrappee;
 	
 	public BaseDecorator(Notifier wrappee) {
