@@ -1,4 +1,4 @@
-package structural.Decorator.FileProcesingExample.FileDemo;
+package structural.Decorator.FileProcesingExample;
 
 public class DataSourceEncryptor extends DataSourceBaseDecorator{
 	

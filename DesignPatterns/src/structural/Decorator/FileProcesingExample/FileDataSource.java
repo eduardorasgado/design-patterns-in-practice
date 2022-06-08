@@ -1,4 +1,4 @@
-package structural.Decorator.FileProcesingExample.FileDemo;
+package structural.Decorator.FileProcesingExample;
 
 public class FileDataSource implements DataSource {
 	private String fileName;

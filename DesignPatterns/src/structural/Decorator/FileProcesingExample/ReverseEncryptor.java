@@ -1,4 +1,4 @@
-package structural.Decorator.FileProcesingExample.FileDemo;
+package structural.Decorator.FileProcesingExample;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package structural.Decorator.FileProcesingExample.FileDemo;
+package structural.Decorator.FileProcesingExample;
 
 public class DataSourceDemo {
 	public static void main(String[] args) {
@@ -13,7 +13,6 @@ public class DataSourceDemo {
 		String data = "this message will be cyphered encrypted and stored";
 		
 		dataHandler.writeData(data);
-		System.out.println(newMessage);
 		dataHandler.readData();
 	}
 }
