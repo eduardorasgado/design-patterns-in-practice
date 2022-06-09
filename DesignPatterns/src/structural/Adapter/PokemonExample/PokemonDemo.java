@@ -27,9 +27,9 @@ public class PokemonDemo {
 		System.out.println("---------Printing the pokemon catched legacy list:----------");
 		System.out.println(catcher.getAllCatched());
 
-		// now there is a new service an external team currently implemented, we cannot
+		// now there is a new service. An external thing recently implemented, we cannot
 		// change it.
-		// But we can create an adapter to it.
+		// But we can create an adapter for it.
 		Map<String, AbstractMap<String, Integer>> newPokemonMap = new HashMap<String, AbstractMap<String, Integer>>();
 		PokedexMapService newPokedexService = new PokedexMapService(newPokemonMap);
 
