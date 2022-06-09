@@ -3,7 +3,6 @@ package structural.Decorator.RPGExample;
 public class VestmentDecorator implements CharacterVestment {
 	private CharacterVestment wrappee;
 	
-	
 	public VestmentDecorator(CharacterVestment wrappee) {
 		this.wrappee = wrappee;
 	}
@@ -12,5 +11,4 @@ public class VestmentDecorator implements CharacterVestment {
 	public int getDefense() {
 		return wrappee.getDefense();
 	}
-
 }

@@ -1,27 +1,25 @@
 package structural.Decorator.RPGExample;
 
-public class Wizard implements RPGCharacter {
-	private CharacterVestment set;
-	private int lifePoints;
-	
-	public Wizard(CharacterVestment set) {
-		this.set = set;
+public class Wizard extends RPGCharacter {
+	private int healingBonus;
+
+	public Wizard(CharacterVestment set, int lifePoints, int attackRate, int healingBonus) {
+		super(set, lifePoints, attackRate);
+		this.healingBonus = healingBonus;
 	}
+	
+	
 
 	@Override
 	public void attack(RPGCharacter character) {
-		// TODO Auto-generated method stub
-
+		System.out.println("wizard is attacking...");
+		super.attack(character);
 	}
 
 	@Override
 	public void defend(RPGCharacter character) {
-		// TODO Auto-generated method stub
+		super.defend(character);
+		System.out.println("wizard is healing: " + healingBonus + " of life");
+		setLifePoints(healingBonus + getLifePoints());
 	}
-
-	@Override
-	public int getLifePoints() {
-		return lifePoints;
-	}
-
 }
