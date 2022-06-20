@@ -25,7 +25,7 @@ public class ThirdPartyYoutubeLib implements ThirdPartyYoutubeService {
 	@Override
 	public void getVideoInfo(int id) {
 		Optional<Video> video = getVideo(id); 
-		video.ifPresent(v -> System.out.println(v.getDetails()));
+		video.ifPresent(v -> System.out.println("* " + v.getDetails()));
 	}
 
 	@Override
