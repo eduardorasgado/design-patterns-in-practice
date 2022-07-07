@@ -1,5 +1,7 @@
 package behavioral.Command.TextEditorExample;
 
+import java.util.List;
+
 public class Editor {
 	private String content;
 	
@@ -17,5 +19,23 @@ public class Editor {
 	
 	public String getSelection() {
 		return content;
+	}
+
+	public static int getIndexFromList(Editor editor, List<Editor> editors) {
+		int index = -1;
+		if(editors.contains(editor)) {
+			for(int i = 0; i <= editors.size(); i++) {
+				if(editors.get(i).equals(editor)) {
+					index = i;
+					break;
+				}
+			}
+		}
+		return index;
+	}
+
+	@Override
+	protected Editor clone() throws CloneNotSupportedException {
+		return new Editor(content);
 	}
 }
