@@ -1,37 +1,29 @@
 package behavioral.Command.TextEditorExample;
 
-public abstract class DocCommand {
-	private Application application;
+public abstract class DocCommand extends BaseCommand {
 	private Editor editor;
 	private String backup;
-	private String commandName;
 	
 	public DocCommand(Application application, Editor editor, String commandName) {
-		this.application = application;
+		super(commandName, application);
 		this.editor = editor;
-		this.commandName = commandName;
+		
 	}
-
-	abstract boolean execute() throws CloneNotSupportedException;
 	
+	@Override
 	public void undo() {
-		System.out.print(commandName);
+		super.undo();
 		editor.replaceSelection(backup);
 	}
 	
+	@Override
 	public void saveBackup() throws CloneNotSupportedException {
 		backup = editor.getSelection();
-	}
-
-	public Application getApplication() {
-		return application;
 	}
 
 	public Editor getEditor() {
 		return editor;
 	}
 
-	public String getCommandName() {
-		return commandName;
-	}
+	
 }

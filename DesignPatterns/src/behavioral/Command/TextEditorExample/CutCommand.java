@@ -7,7 +7,7 @@ public class CutCommand extends DocCommand {
 	}
 
 	@Override
-	boolean execute() throws CloneNotSupportedException {
+	public boolean execute() throws CloneNotSupportedException {
 		saveBackup();
 		getApplication().setClipboard(getEditor().getSelection());
 		getEditor().deleteSelection();

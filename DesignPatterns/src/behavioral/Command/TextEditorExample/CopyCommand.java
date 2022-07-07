@@ -7,7 +7,7 @@ public class CopyCommand extends DocCommand {
 	}
 
 	@Override
-	boolean execute() {
+	public boolean execute() {
 		getApplication().setClipboard(getEditor().getSelection());
 		return false;
 	}

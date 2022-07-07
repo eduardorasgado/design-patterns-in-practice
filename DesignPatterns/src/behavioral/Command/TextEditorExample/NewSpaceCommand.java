@@ -12,7 +12,7 @@ public class NewSpaceCommand extends DocCommand {
 	}
 
 	@Override
-	boolean execute() throws CloneNotSupportedException {
+	public boolean execute() throws CloneNotSupportedException {
 		saveBackup();
 		Editor activeEditor = getApplication().getActiveEditor();
 		List<Editor> editors = getApplication().getEditors();
@@ -20,7 +20,9 @@ public class NewSpaceCommand extends DocCommand {
 		int insertionIndex = Editor.getIndexFromList(activeEditor, editors);
 		editors.add(insertionIndex + 1, new Editor(""));
 		
-		getApplication().setActiveEditor(editors.get(insertionIndex + 1));
+		
+		//getApplication().setActiveEditor(editors.get(insertionIndex + 1));
+		getApplication().executeCommand(new UpdateActiveEditorCommand(getApplication(), editors.get(insertionIndex + 1)));
 		return true;
 	}
 
@@ -30,7 +32,5 @@ public class NewSpaceCommand extends DocCommand {
 		List<Editor> editors = getApplication().getEditors();
 		int insertionIndex = Editor.getIndexFromList(activeEditor, editors);
 		editors.remove(activeEditor);
-		
-		activeEditor = editors.get(insertionIndex - 1);
 	}
 }

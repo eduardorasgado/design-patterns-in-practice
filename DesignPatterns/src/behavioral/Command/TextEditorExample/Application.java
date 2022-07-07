@@ -60,7 +60,7 @@ public class Application {
 		tabButton = new Button("Space");
 	}
 
-	protected void executeCommand(DocCommand docCommand) {
+	protected void executeCommand(Command docCommand) {
 		try {
 			if (docCommand.execute()) {
 				history.push(docCommand);
@@ -150,7 +150,7 @@ public class Application {
 		generateDocument();
 
 		System.out.println("!undoing!");
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 7; i++) {
 			undoButton.onClick();
 			generateDocument();
 		}
@@ -161,7 +161,8 @@ public class Application {
 		for (Editor editor : editors) {
 			System.out.println(editor.getSelection());
 		}
-		System.out.print("------------------------");
+		System.out.println("------------------------ active line: " + " ["
+				+ Editor.getIndexFromList(getActiveEditor(), getEditors()) + "]" + getActiveEditor().getSelection());
 	}
 
 	public void setEditors(List<Editor> editorsBackup) {

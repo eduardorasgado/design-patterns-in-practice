@@ -7,8 +7,8 @@ public class UndoCommand extends DocCommand {
 	}
 
 	@Override
-	boolean execute() {
-		DocCommand command = getApplication().getHistory().pop();
+	public boolean execute() {
+		Command command = getApplication().getHistory().pop();
 		command.undo();
 		return false;
 	}

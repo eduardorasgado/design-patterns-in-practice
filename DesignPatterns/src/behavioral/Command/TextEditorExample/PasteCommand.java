@@ -7,7 +7,7 @@ public class PasteCommand extends DocCommand {
 	}
 
 	@Override
-	boolean execute() throws CloneNotSupportedException {
+	public boolean execute() throws CloneNotSupportedException {
 		if(getApplication().getClipboard() != null) {
 			saveBackup();
 			getEditor().replaceSelection(getApplication().getClipboard());
