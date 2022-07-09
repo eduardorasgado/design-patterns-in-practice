@@ -15,7 +15,7 @@ public class TreasureChestDemo {
 		}
 
 		if (chestItemIterator.next() == null) {
-			System.out.println("next element is null");
+			LOGGER.warning("next element is null");
 		}
 	}
 }
