@@ -1,4 +1,4 @@
-package behavioral.IteratorTreasureChestExample;
+package behavioral.Iterator.TreasureChestExample;
 
 import java.util.ArrayList;
 import java.util.List;

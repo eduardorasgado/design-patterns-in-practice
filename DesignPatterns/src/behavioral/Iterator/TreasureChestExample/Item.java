@@ -1,4 +1,4 @@
-package behavioral.IteratorTreasureChestExample;
+package behavioral.Iterator.TreasureChestExample;
 
 public class Item {
 	private ItemType type;

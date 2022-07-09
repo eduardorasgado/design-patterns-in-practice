@@ -1,4 +1,4 @@
-package behavioral.IteratorTreasureChestExample;
+package behavioral.Iterator.TreasureChestExample;
 
 public interface Iterator<T> {
 	boolean hasNext();
