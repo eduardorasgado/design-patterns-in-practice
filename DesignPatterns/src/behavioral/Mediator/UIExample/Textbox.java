@@ -1,13 +1,24 @@
 package behavioral.Mediator.UIExample;
 
 public class Textbox extends Component implements LayoutElement {
+	private boolean hidden = true;
 
-	public Textbox(Mediator dialog) {
-		super(dialog);
+	public Textbox(String title) {
+		super(title);
 	}
 
 	@Override
 	public void render() {
-		System.out.println("[Textbox]");
+		if (!isHidden()) {
+			System.out.println("[Textbox]: " + getTitle());
+		}
+	}
+
+	public boolean isHidden() {
+		return hidden;
+	}
+
+	public void setHidden(boolean hidden) {
+		this.hidden = hidden;
 	}
 }

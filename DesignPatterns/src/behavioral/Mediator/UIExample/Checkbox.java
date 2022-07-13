@@ -1,17 +1,23 @@
 package behavioral.Mediator.UIExample;
 
 public class Checkbox extends Component implements LayoutElement {
+	private boolean checked = false;
 
-	public Checkbox(Mediator dialog) {
-		super(dialog);
+	public Checkbox(String title) {
+		super(title);
 	}
 
 	@Override
 	public void render() {
-		System.out.println("[Checkbox]");
+		System.out.println("[Checkbox]: " + getTitle());
 	}
-	
+
 	public void check() {
-		dialog.notify(null, null);
+		checked = !checked;
+		dialog.notify(this, "check");
+	}
+
+	public boolean isChecked() {
+		return checked;
 	}
 }
