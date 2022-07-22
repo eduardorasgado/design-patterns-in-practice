@@ -18,8 +18,7 @@ public class UIDemo {
 		Checkbox loginOrRegisterCheckbox = new Checkbox("Login/Register");
 		Checkbox rememberMeCheckbox = new Checkbox("Remember me");
 
-		DialogBuilder dialogBuilder = new DialogBuilder();
-		AuthenticationDialog dialog = dialogBuilder.setButtons(okButton, cancelButton)
+		AuthenticationDialog dialog = new DialogBuilder().setButtons(okButton, cancelButton)
 				.setLoginTextboxes(loginUsernameTextbox, loginPasswordTextbox)
 				.setRegisterTextboxes(registerUsernameTextbox, registerPasswordTextbox, registerEmailTextbox)
 				.setCheckboxes(loginOrRegisterCheckbox, rememberMeCheckbox).build();
