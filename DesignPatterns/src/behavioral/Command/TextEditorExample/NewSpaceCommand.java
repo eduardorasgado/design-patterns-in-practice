@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NewSpaceCommand extends DocCommand {
-
-	private List<Editor> editorsBackup;
 	
 	public NewSpaceCommand(Application application, Editor editor) {
 		super(application, editor, "NEW SPACE");
